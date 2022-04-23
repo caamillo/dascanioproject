@@ -3,7 +3,10 @@
 $color1: #968E72;
 $color2: #fafcc4;
 
-$prefixes: ("-moz-", "");
+$navpad: 1rem;
+$navmargin: $navpad * 3;
+
+$prefixes: ("-webkit-", "-khtml-", "-moz-", "-ms-",  "");
 
 @mixin selection($color, $background) {
     @each $prefix in $prefixes {
@@ -31,11 +34,16 @@ body{
         position: fixed;
         left:0;
         right:0;
+        padding: $navpad;
         margin-left: auto;
         margin-right: auto;
+        @each $prefix in $prefixes {
+            #{$prefix}user-select: none;
+        }
         a{
             text-decoration: none;
             color: #E9EB9E;
+            cursor: default;
         }
         a:hover{
             color:white;
@@ -50,7 +58,7 @@ body{
             text-align: center;
         }
         ul li{
-            margin: 10vw;
+            margin: 9vw;
             display: inline;
         }
     }
@@ -63,7 +71,7 @@ body{
             width: 100vw;
             height: 100vh;
             scroll-snap-align: start;
-            &:nth-of-type(1){
+            &#titlediv{
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -71,17 +79,18 @@ body{
                 h1{
                     font-size: 7vh;
                     font-weight: 700;
-                    margin:0;
+                    margin: 0;
                 }
             }
-            &:nth-of-type(2){
+            &#blogdiv{
                 background-color: $color2;
                 color: $color1;
                 @include selection($color2, $color1);
+                *{
+                    position: relative;
+                    top: $navmargin;
+                }
             }
-            &:nth-of-type(3){
-            }
-
         }
     }
 }

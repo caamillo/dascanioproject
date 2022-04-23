@@ -10,30 +10,30 @@
   </head>
   <body>
     <div class="container">
-        <div class="row mt-3" id="indexes">
+        <div class="row" id="indexes">
             <div class="col">
                 <ul>
                     <li>
-                        <a href="#" class="active">Home</a>
+                        <a onclick="document.getElementById('titlediv').scrollIntoView()" class="active">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="">Blog</a>
+                        <a onclick="document.getElementById('titlediv').scrollIntoView()" class="">Blog</a>
                     </li>
                     <li>
-                        <a href="#" class="">About</a>
+                        <a onclick="document.getElementById('aboutdiv').scrollIntoView()" class="">About</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <section>
+        <section id="titlediv">
             <div>
-                <h1 id="title">D'ASCANIO OPERA</h1>
+                <h1>D'ASCANIO OPERA</h1>
             </div>
         </section>
-        <section>
+        <section id="blogdiv">
             <h1>Page Due</h1>
         </section>
-        <section>
+        <section id="aboutdiv">
             <h1>Page Tre</h1>
         </section>
     </div>

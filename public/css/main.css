@@ -15,7 +15,22 @@ body {
   margin: 0;
 }
 
+body ::-webkit-selection {
+  color: #968E72;
+  background: #fafcc4;
+}
+
+body ::-khtml-selection {
+  color: #968E72;
+  background: #fafcc4;
+}
+
 body ::-moz-selection {
+  color: #968E72;
+  background: #fafcc4;
+}
+
+body ::-ms-selection {
   color: #968E72;
   background: #fafcc4;
 }
@@ -29,13 +44,19 @@ body #indexes {
   position: fixed;
   left: 0;
   right: 0;
+  padding: 1rem;
   margin-left: auto;
   margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body #indexes a {
   text-decoration: none;
   color: #E9EB9E;
+  cursor: default;
 }
 
 body #indexes a:hover {
@@ -54,7 +75,7 @@ body #indexes ul {
 }
 
 body #indexes ul li {
-  margin: 10vw;
+  margin: 9vw;
   display: inline;
 }
 
@@ -71,7 +92,7 @@ body .container section {
   scroll-snap-align: start;
 }
 
-body .container section:nth-of-type(1) {
+body .container section#titlediv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,24 +105,44 @@ body .container section:nth-of-type(1) {
   text-align: center;
 }
 
-body .container section:nth-of-type(1) h1 {
+body .container section#titlediv h1 {
   font-size: 7vh;
   font-weight: 700;
   margin: 0;
 }
 
-body .container section:nth-of-type(2) {
+body .container section#blogdiv {
   background-color: #fafcc4;
   color: #968E72;
 }
 
-body .container section:nth-of-type(2) ::-moz-selection {
+body .container section#blogdiv ::-webkit-selection {
   color: #fafcc4;
   background: #968E72;
 }
 
-body .container section:nth-of-type(2) ::selection {
+body .container section#blogdiv ::-khtml-selection {
   color: #fafcc4;
   background: #968E72;
+}
+
+body .container section#blogdiv ::-moz-selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body .container section#blogdiv ::-ms-selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body .container section#blogdiv ::selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body .container section#blogdiv * {
+  position: relative;
+  top: 3rem;
 }
 /*# sourceMappingURL=main.css.map */
