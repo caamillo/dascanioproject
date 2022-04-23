@@ -7,7 +7,6 @@ const db = require('./db');
 
     const app = express()
     app.use(morgan('tiny'))
-    app.use('trust proxy', 1)
 
     app.use(express.static('public'))
     app.use(express.urlencoded({extended: true}))
@@ -21,4 +20,4 @@ const db = require('./db');
     app.listen(3000, () => {
         console.log("Server is running on http://localhost:3000")
     })
-})
+})()

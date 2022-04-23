@@ -1,0 +1,55 @@
+$color1: #968E72;
+$color2: #fafcc4;
+
+$prefixes: ("-moz-", "");
+
+@mixin selection($color, $background) {
+    @each $prefix in $prefixes {
+        ::#{$prefix}selection {
+            color: $color;
+            background: $background;
+        }
+    }
+}
+
+html{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+body{
+    background-color: $color1;
+    color: $color2;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    @include selection($color1, $color2);
+    .container{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            &:nth-of-type(1){
+            }
+            &:nth-of-type(2){
+                background-color: $color2;
+                color: $color1;
+                @include selection($color2, $color1);
+            }
+            &:nth-of-type(3){
+            }
+
+            h1{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 5em;
+            }
+        }
+    }
+}

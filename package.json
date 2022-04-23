@@ -4,7 +4,8 @@
   "description": "NAO Challenge project about D'ascanio IIS Volta Pescara",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js",
+    "sass": "node-sass --output-style compressed -o public/css public/css/main.scss"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/Diasky/dascanioproject#readme",
   "dependencies": {
+    "ejs": "^3.1.7",
     "express": "^4.17.3",
     "mongoose": "^6.3.1",
     "morgan": "^1.10.0"
