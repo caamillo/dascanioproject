@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap");
 html {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -7,6 +8,7 @@ html {
 
 body {
   background-color: #968E72;
+  font-family: 'Playfair Display', serif;
   color: #fafcc4;
   width: 100vw;
   height: 100vh;
@@ -23,6 +25,39 @@ body ::selection {
   background: #fafcc4;
 }
 
+body #indexes {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body #indexes a {
+  text-decoration: none;
+  color: #E9EB9E;
+}
+
+body #indexes a:hover {
+  color: white;
+}
+
+body #indexes a.active {
+  color: white;
+}
+
+body #indexes ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+body #indexes ul li {
+  margin: 10vw;
+  display: inline;
+}
+
 body .container {
   margin: 0;
   padding: 0;
@@ -31,6 +66,12 @@ body .container {
 }
 
 body .container section {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+body .container section:nth-of-type(1) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,9 +81,13 @@ body .container section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
+  text-align: center;
+}
+
+body .container section:nth-of-type(1) h1 {
+  font-size: 7vh;
+  font-weight: 700;
+  margin: 0;
 }
 
 body .container section:nth-of-type(2) {
@@ -58,10 +103,5 @@ body .container section:nth-of-type(2) ::-moz-selection {
 body .container section:nth-of-type(2) ::selection {
   color: #fafcc4;
   background: #968E72;
-}
-
-body .container section h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 5em;
 }
 /*# sourceMappingURL=main.css.map */
