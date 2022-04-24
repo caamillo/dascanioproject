@@ -97,5 +97,11 @@ navbar.forEach(item => {
 
 $(document).ready(function() {
     console.log('Ready!')
-    $("html").addClass('color1')
+    $('html').css('overflow-y', 'hidden')
+    document.getElementById('loader').style.animation = 'test 1s'
+    document.getElementById('loader').style.opacity = '0'
+    setTimeout(function(){
+        document.getElementById('loader').style.display = 'none'
+        $('html').css('overflow-y', 'scroll')
+    }, 1000)
 })
