@@ -3,6 +3,9 @@
 $color1: #968E72;
 $color2: #fafcc4;
 
+$navcolor1: #E9EB9E;
+$navcolor2: #8a805b;
+
 $navpad: 1rem;
 $navmargin: $navpad * 3;
 
@@ -21,6 +24,52 @@ html{
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
+    &.color1{
+        scrollbar-color: $color2 $color1;
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar {
+                width: 10px;
+            }
+        }
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar-track {
+                background: $color1;
+            }
+        }
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar-thumb {
+                background: $color2;
+            }
+        }
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar-thumb:hover {
+                background: $color2; 
+            }
+        }
+    }
+    &.color2{
+        scrollbar-color: $color1 $color2;
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar {
+                width: 10px;
+            }
+        }
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar-track {
+                background: $color2;
+            }
+        }
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar-thumb {
+                background: $color1;
+            }
+        }
+        @each $prefix in $prefixes {
+            ::#{$prefix}scrollbar-thumb:hover {
+                background: $color1; 
+            }
+        }
+    }
 }
 body{
     background-color: $color1;
@@ -42,7 +91,7 @@ body{
         }
         a{
             text-decoration: none;
-            color: #E9EB9E;
+            color: $navcolor1;
             cursor: default;
         }
         a:hover{
@@ -71,7 +120,7 @@ body{
             width: 100vw;
             height: 100vh;
             scroll-snap-align: start;
-            &#titlediv{
+            &#homediv{
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -82,7 +131,7 @@ body{
                     margin: 0;
                 }
             }
-            &#blogdiv{
+            &.blogdiv{
                 background-color: $color2;
                 color: $color1;
                 @include selection($color2, $color1);
