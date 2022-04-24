@@ -132,14 +132,51 @@ body{
                 }
             }
             &.blogdiv{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 background-color: $color2;
                 color: $color1;
-                @include selection($color2, $color1);
-                *{
-                    position: relative;
-                    top: $navmargin;
+                .cards{
+                    .card{
+                        @include selection($color2, $color1);
+                        display: inline-block;
+                        margin: 0.5rem;
+                        max-width: 60vw;
+                        max-height: 45vh;
+                        border: 1px solid $color1;
+                        color: $color1;
+                        .card-img-top{
+                            max-width: 60vw;
+                            max-height: 60vh;
+                        }
+                        .card-body{
+                            padding: 1rem;
+                            .card-title{
+                                font-size: 3vh;
+                                font-weight: 600;
+                                margin: 0;
+                            }
+                            a{
+                                @each $prefix in $prefixes {
+                                    #{$prefix}user-select: none;
+                                }
+                                cursor: default;
+                                color: $navcolor2;
+                                text-decoration: none;
+                                &:hover{
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
                 }
             }
+        }
+    }
+    img{
+        @each $prefix in $prefixes {
+            #{$prefix}user-select: none;
         }
     }
 }

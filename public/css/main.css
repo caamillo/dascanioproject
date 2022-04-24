@@ -193,37 +193,86 @@ body .container section#homediv h1 {
 }
 
 body .container section.blogdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fafcc4;
   color: #968E72;
 }
 
-body .container section.blogdiv ::-webkit-selection {
+body .container section.blogdiv .cards .card {
+  display: inline-block;
+  margin: 0.5rem;
+  max-width: 60vw;
+  max-height: 45vh;
+  border: 1px solid #968E72;
+  color: #968E72;
+}
+
+body .container section.blogdiv .cards .card ::-webkit-selection {
   color: #fafcc4;
   background: #968E72;
 }
 
-body .container section.blogdiv ::-khtml-selection {
+body .container section.blogdiv .cards .card ::-khtml-selection {
   color: #fafcc4;
   background: #968E72;
 }
 
-body .container section.blogdiv ::-moz-selection {
+body .container section.blogdiv .cards .card ::-moz-selection {
   color: #fafcc4;
   background: #968E72;
 }
 
-body .container section.blogdiv ::-ms-selection {
+body .container section.blogdiv .cards .card ::-ms-selection {
   color: #fafcc4;
   background: #968E72;
 }
 
-body .container section.blogdiv ::selection {
+body .container section.blogdiv .cards .card ::selection {
   color: #fafcc4;
   background: #968E72;
 }
 
-body .container section.blogdiv * {
-  position: relative;
-  top: 3rem;
+body .container section.blogdiv .cards .card .card-img-top {
+  max-width: 60vw;
+  max-height: 60vh;
+}
+
+body .container section.blogdiv .cards .card .card-body {
+  padding: 1rem;
+}
+
+body .container section.blogdiv .cards .card .card-body .card-title {
+  font-size: 3vh;
+  font-weight: 600;
+  margin: 0;
+}
+
+body .container section.blogdiv .cards .card .card-body a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  color: #8a805b;
+  text-decoration: none;
+}
+
+body .container section.blogdiv .cards .card .card-body a:hover {
+  color: black;
+}
+
+body img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 /*# sourceMappingURL=main.css.map */

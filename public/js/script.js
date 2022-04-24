@@ -1,8 +1,17 @@
-var currentDiv = getActiveDiv()
+window.onscroll = changeNavColor
 
-window.onscroll = function() {
+const color1 = "#968E72";
+const color2 = "#fafcc4";
+
+const navcolor1 = "#E9EB9E";
+const navcolor2 = "#8a805b";
+
+var currentDiv = null
+
+function changeNavColor(){
     const activediv = getActiveDiv()
-    if (activediv == currentDiv) return
+    if (currentDiv == null) currentDiv = activediv
+    else if (activediv == currentDiv) return
     if(activediv == 0){
         changeActive(document.getElementById('home'))
         navbar.forEach(item => {
@@ -35,12 +44,6 @@ window.onscroll = function() {
     }
     currentDiv = activediv
 }
-
-const color1 = "#968E72";
-const color2 = "#fafcc4";
-
-const navcolor1 = "#E9EB9E";
-const navcolor2 = "#8a805b";
 
 function getActiveDiv () {
     const els = [[document.getElementById('homediv')],document.getElementsByClassName('blogdiv'),[document.getElementById('aboutdiv')]]
@@ -104,4 +107,5 @@ $(document).ready(function() {
         document.getElementById('loader').style.display = 'none'
         $('html').css('overflow-y', 'scroll')
     }, 1000)
+    changeNavColor()
 })
