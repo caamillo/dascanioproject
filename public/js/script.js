@@ -2,15 +2,9 @@ var currentDiv = getActiveDiv()
 
 window.onscroll = function() {
     const activediv = getActiveDiv()
-    if (activediv == currentDiv) return console.log('test')
-    console.log('avanti')
+    if (activediv == currentDiv) return
     if(activediv == 0){
         changeActive(document.getElementById('home'))
-        if(document.documentElement.classList.contains('color2')){
-            document.documentElement.classList.remove('color2')
-            document.documentElement.classList.add('color1')
-            setTimeout(scrollRedraw, 300)
-        }
         navbar.forEach(item => {
             if(!item.childNodes[1].classList.contains('active')){
                 item.childNodes[1].style.color = navcolor1;
@@ -21,11 +15,6 @@ window.onscroll = function() {
     }
     if(activediv == 1){
         changeActive(document.getElementById('blog'))
-        if(document.documentElement.classList.contains('color1')){
-            document.documentElement.classList.remove('color1')
-            document.documentElement.classList.add('color2')   
-            setTimeout(scrollRedraw, 200)
-        }
         navbar.forEach(item => {
             if(!item.childNodes[1].classList.contains('active')){
                 item.childNodes[1].style.color = navcolor2;
@@ -36,11 +25,6 @@ window.onscroll = function() {
     }
     if(activediv == 2){
         changeActive(document.getElementById('about'))
-        if(document.documentElement.classList.contains('color2')){
-            document.documentElement.classList.remove('color2')
-            document.documentElement.classList.add('color1')   
-            setTimeout(scrollRedraw, 300)
-        }
         navbar.forEach(item => {
             if(!item.childNodes[1].classList.contains('active')){
                 item.childNodes[1].style.color = navcolor1;
@@ -80,13 +64,6 @@ function getActiveDiv () {
         }
     }
     return min1
-}
-
-function scrollRedraw() {
-    $('html').css('overflow', 'hidden').height();
-    $('html').css('overflow-y', 'scroll')
-    $('html').css('overflow-x', 'hidden')
-    $('html').css('scroll-snap-type', 'y mandatory')
 }
 
 function getCurrentActive(){

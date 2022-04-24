@@ -6,172 +6,24 @@ html {
       scroll-snap-type: y mandatory;
 }
 
-html.color1 {
-  scrollbar-color: #fafcc4 #968E72;
+html ::-webkit-scrollbar {
+  width: 0px;
 }
 
-html.color1 ::-webkit-scrollbar {
-  width: 10px;
+html ::-khtml-scrollbar {
+  width: 0px;
 }
 
-html.color1 ::-khtml-scrollbar {
-  width: 10px;
+html ::-moz-scrollbar {
+  width: 0px;
 }
 
-html.color1 ::-moz-scrollbar {
-  width: 10px;
+html ::-ms-scrollbar {
+  width: 0px;
 }
 
-html.color1 ::-ms-scrollbar {
-  width: 10px;
-}
-
-html.color1 ::scrollbar {
-  width: 10px;
-}
-
-html.color1 ::-webkit-scrollbar-track {
-  background: #968E72;
-}
-
-html.color1 ::-khtml-scrollbar-track {
-  background: #968E72;
-}
-
-html.color1 ::-moz-scrollbar-track {
-  background: #968E72;
-}
-
-html.color1 ::-ms-scrollbar-track {
-  background: #968E72;
-}
-
-html.color1 ::scrollbar-track {
-  background: #968E72;
-}
-
-html.color1 ::-webkit-scrollbar-thumb {
-  background: #fafcc4;
-}
-
-html.color1 ::-khtml-scrollbar-thumb {
-  background: #fafcc4;
-}
-
-html.color1 ::-moz-scrollbar-thumb {
-  background: #fafcc4;
-}
-
-html.color1 ::-ms-scrollbar-thumb {
-  background: #fafcc4;
-}
-
-html.color1 ::scrollbar-thumb {
-  background: #fafcc4;
-}
-
-html.color1 ::-webkit-scrollbar-thumb:hover {
-  background: #fafcc4;
-}
-
-html.color1 ::-khtml-scrollbar-thumb:hover {
-  background: #fafcc4;
-}
-
-html.color1 ::-moz-scrollbar-thumb:hover {
-  background: #fafcc4;
-}
-
-html.color1 ::-ms-scrollbar-thumb:hover {
-  background: #fafcc4;
-}
-
-html.color1 ::scrollbar-thumb:hover {
-  background: #fafcc4;
-}
-
-html.color2 {
-  scrollbar-color: #968E72 #fafcc4;
-}
-
-html.color2 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-html.color2 ::-khtml-scrollbar {
-  width: 10px;
-}
-
-html.color2 ::-moz-scrollbar {
-  width: 10px;
-}
-
-html.color2 ::-ms-scrollbar {
-  width: 10px;
-}
-
-html.color2 ::scrollbar {
-  width: 10px;
-}
-
-html.color2 ::-webkit-scrollbar-track {
-  background: #fafcc4;
-}
-
-html.color2 ::-khtml-scrollbar-track {
-  background: #fafcc4;
-}
-
-html.color2 ::-moz-scrollbar-track {
-  background: #fafcc4;
-}
-
-html.color2 ::-ms-scrollbar-track {
-  background: #fafcc4;
-}
-
-html.color2 ::scrollbar-track {
-  background: #fafcc4;
-}
-
-html.color2 ::-webkit-scrollbar-thumb {
-  background: #968E72;
-}
-
-html.color2 ::-khtml-scrollbar-thumb {
-  background: #968E72;
-}
-
-html.color2 ::-moz-scrollbar-thumb {
-  background: #968E72;
-}
-
-html.color2 ::-ms-scrollbar-thumb {
-  background: #968E72;
-}
-
-html.color2 ::scrollbar-thumb {
-  background: #968E72;
-}
-
-html.color2 ::-webkit-scrollbar-thumb:hover {
-  background: #968E72;
-}
-
-html.color2 ::-khtml-scrollbar-thumb:hover {
-  background: #968E72;
-}
-
-html.color2 ::-moz-scrollbar-thumb:hover {
-  background: #968E72;
-}
-
-html.color2 ::-ms-scrollbar-thumb:hover {
-  background: #968E72;
-}
-
-html.color2 ::scrollbar-thumb:hover {
-  background: #968E72;
+html ::scrollbar {
+  width: 0px;
 }
 
 body {
