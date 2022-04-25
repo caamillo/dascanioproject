@@ -333,8 +333,14 @@ body .container section.blogdiv .cards .card .card-body a:hover {
 
 body img {
   -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-select: none;
+  -khtml-user-drag: none;
   -moz-user-select: none;
+  -moz-user-drag: none;
   -ms-user-select: none;
+  -ms-user-drag: none;
   user-select: none;
+  user-drag: none;
 }
 /*# sourceMappingURL=main.css.map */

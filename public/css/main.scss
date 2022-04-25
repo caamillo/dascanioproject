@@ -216,6 +216,7 @@ body{
     img{
         @each $prefix in $prefixes {
             #{$prefix}user-select: none;
+            #{$prefix}user-drag: none;
         }
     }
 }
