@@ -98,6 +98,15 @@ navbar.forEach(item => {
     }
 })
 
+function buildBlog(){
+
+}
+
+$(window).resize(function(){
+    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
+    // rebuild blog
+})
+
 $(document).ready(function() {
     console.log('Ready!')
     $('html').css('overflow-y', 'hidden')
