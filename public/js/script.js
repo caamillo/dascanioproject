@@ -98,13 +98,23 @@ navbar.forEach(item => {
     }
 })
 
-function buildBlog(){
+function b64DecodeUnicode(str) {
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
 
+const maxdesktop = 700
+
+function buildBlog(){
+    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
+    const posts = JSON.parse(b64DecodeUnicode(blog))
+    posts.push(JSON.parse(JSON.stringify({date:new Date()})))
+    posts.filter(item => item.date != null).sort((a,b) => b.date - a.date)
 }
 
 $(window).resize(function(){
-    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
-    // rebuild blog
+    buildBlog()
 })
 
 $(document).ready(function() {

@@ -13,8 +13,17 @@ const db = require('./db');
 
     app.set('view engine', 'ejs')
 
-    app.get('/', (req, res) => {
-        res.render('index')
+    app.get('/', async (req, res) => {
+        const blog = await db.blogsModel.find({})
+        res.render('index', { blog: Buffer.from(JSON.stringify(blog)).toString('base64') })
+    })
+
+    app.get('/test', async (req, res) => {
+        await db.blogsModel.create({
+            title: 'Test Blog',
+            content: 'This is a test blog',
+            date: new Date()
+        })
     })
 
     app.listen(3000, () => {
