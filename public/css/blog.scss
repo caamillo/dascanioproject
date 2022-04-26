@@ -31,11 +31,41 @@ body{
     background-color: $bgcolor;
     @include selection($color2, $color1);
     .container{
+        #indexes{
+            position: fixed;
+            left:0;
+            right:0;
+            padding: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            @each $prefix in $prefixes {
+                #{$prefix}user-select: none;
+            }
+            a{
+                text-decoration: none;
+                color: #8a805b;
+                color: 1rem;
+                cursor: default;
+            }
+            a:hover{
+                color:#000;
+            }
+            ul{
+                margin: 0 auto;
+                padding: 0;
+                list-style-type: none;
+                text-align: center;
+            }
+            ul li{
+                margin: 9vw;
+                display: inline;
+            }
+        }
         #card{
             position: absolute;
             text-align: center;
             left: 50%;
-            top: 3rem;
+            top: 3.3rem;
             transform: translate(-50%, 0%);
             width: 35vw;
             min-width: 600px;
@@ -79,12 +109,42 @@ body{
             }
         }
         @media screen and (max-width: 1000px) {
+            #indexes{
+                position: relative;
+                left:0;
+                right:0;
+                padding: 0.5rem;
+                margin-left: auto;
+                margin-right: auto;
+                @each $prefix in $prefixes {
+                    #{$prefix}user-select: none;
+                }
+                a{
+                    text-decoration: none;
+                    color: #8a805b;
+                    color: 1rem;
+                    cursor: default;
+                }
+                a:hover{
+                    color:#000;
+                }
+                ul{
+                    margin: 0 auto;
+                    padding: 0;
+                    list-style-type: none;
+                    text-align: center;
+                }
+                ul li{
+                    margin: 9vw;
+                    display: inline;
+                }
+            }
             #card{
                 position: relative;
                 top:0;
                 width: 350px;
                 min-width: 200px;
-                margin-top: 3rem;
+                margin-top: 0.5rem;
                 margin-bottom: 2rem;
                 #header{
                     text-align: center;

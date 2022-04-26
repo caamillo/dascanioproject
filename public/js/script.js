@@ -167,7 +167,6 @@ $(window).resize(function(){
 })
 
 $(document).ready(function() {
-    console.log('Ready!')
     $('html').css('overflow-y', 'hidden')
     document.getElementById('loader').style.animation = 'test 1s'
     document.getElementById('loader').style.opacity = '0'
@@ -177,4 +176,5 @@ $(document).ready(function() {
     }, 1000)
     changeNavColor()
     buildBlog()
+    console.log('Ready!')
 })

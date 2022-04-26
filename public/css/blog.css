@@ -55,11 +55,47 @@ body ::selection {
   background: #968E72;
 }
 
+body .container #indexes {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body .container #indexes a {
+  text-decoration: none;
+  color: #8a805b;
+  color: 1rem;
+  cursor: default;
+}
+
+body .container #indexes a:hover {
+  color: #000;
+}
+
+body .container #indexes ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+body .container #indexes ul li {
+  margin: 9vw;
+  display: inline;
+}
+
 body .container #card {
   position: absolute;
   text-align: center;
   left: 50%;
-  top: 3rem;
+  top: 3.3rem;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
   width: 35vw;
@@ -106,12 +142,43 @@ body .container #card #content #author {
 }
 
 @media screen and (max-width: 1000px) {
+  body .container #indexes {
+    position: relative;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  body .container #indexes a {
+    text-decoration: none;
+    color: #8a805b;
+    color: 1rem;
+    cursor: default;
+  }
+  body .container #indexes a:hover {
+    color: #000;
+  }
+  body .container #indexes ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+  }
+  body .container #indexes ul li {
+    margin: 9vw;
+    display: inline;
+  }
   body .container #card {
     position: relative;
     top: 0;
     width: 350px;
     min-width: 200px;
-    margin-top: 3rem;
+    margin-top: 0.5rem;
     margin-bottom: 2rem;
   }
   body .container #card #header {
