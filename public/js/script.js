@@ -102,11 +102,6 @@ navbar.forEach(item => {
     }
 })
 
-function b64DecodeUnicode(str) {
-    return decodeURIComponent(atob(str).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-}
 
 Element.prototype.insertChildAtIndex = function(child, index) {
     if (!index) index = 0
@@ -160,6 +155,7 @@ function buildBlog(){
             clone.childNodes[1].src = posts[idx].img
             clone.childNodes[3].childNodes[1].innerHTML = posts[idx].title
             clone.childNodes[3].childNodes[3].innerHTML = posts[idx].content.substr(0,50) + (posts[idx].content.length > 50 ? ' ...' : '')
+            clone.childNodes[3].childNodes[5].href = 'blog?id=' + posts[idx]._id
             cards.appendChild(clone)
         }
     }

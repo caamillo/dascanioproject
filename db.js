@@ -12,7 +12,17 @@ const connect = async () => {
 
 const blogsModel = mongoose.model('blogs', mongoose.Schema({}, {strict: false}))
 
+async function getBlogById(id){
+    try{
+        return await blogsModel.findOne({_id: mongoose.Types.ObjectId(id)})
+    }catch(ex){
+        console.error(`Error getting blog by id:\n${ex}`)
+        return null
+    }
+}
+
 module.exports = {
     connect,
+    getBlogById,
     blogsModel
 }
