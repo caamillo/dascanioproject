@@ -270,6 +270,10 @@ body .container section.blogdiv .cards .card .card-body a:hover {
   color: black;
 }
 
+body .container section.blogdiv .cards .card .card-body p {
+  height: 5vh;
+}
+
 @media screen and (max-width: 1005px) {
   body .container section.blogdiv .cards .card {
     display: block;
@@ -314,6 +318,8 @@ body .container section.blogdiv .cards .card .card-body a:hover {
     margin: 0;
   }
   body .container section.blogdiv .cards .card .card-body a {
+    display: block;
+    margin-top: 2rem;
     font-size: 0.7rem;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -328,6 +334,7 @@ body .container section.blogdiv .cards .card .card-body a:hover {
   }
   body .container section.blogdiv .cards .card .card-body p {
     font-size: 0.8rem;
+    height: 3vh;
   }
 }
 

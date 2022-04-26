@@ -125,17 +125,9 @@ function buildBlog(){
     if (lastres != null)
         if (width >= maxdesktop && lastres) return
             else if (width < maxdesktop && !lastres) return
+    const blogs = JSON.parse(b64DecodeUnicode(blog))
     const posts = []
-    // remove example
-    for (let i = 0; i < 10; i++) posts.push(
-        {
-            title: 'test title',
-            content: 'test content !!!! si và a lettòòò!! Poliziaaaa&%£',
-            author: 'Samuele Fornaro',
-            date: JSON.parse(JSON.stringify(new Date())),
-            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Red_Vespa_Scooter.jpg/1200px-Red_Vespa_Scooter.jpg'
-        }
-    )
+    for (let b of blogs) posts.push(b)
     posts.filter(item => item.date != null).sort((a,b) => b.date - a.date)
     const postperpage = width >= maxdesktop ? 3 : 2
     const lastpage = (Math.ceil(posts.length/postperpage) * postperpage) / postperpage
@@ -161,13 +153,13 @@ function buildBlog(){
         for(var j = 0; j < postperpage; j++){
             const idx = i * postperpage + j
             if (idx >= posts.length) break
-            const template = document.getElementsByClassName('card')[0] // create post per section
+            const template = document.getElementsByClassName('card')[0]
             const clone = template.cloneNode(true)
 
             clone.style.display = width >= maxdesktop ? 'inline-block' : 'block'
             clone.childNodes[1].src = posts[idx].img
             clone.childNodes[3].childNodes[1].innerHTML = posts[idx].title
-            clone.childNodes[3].childNodes[3].innerHTML = posts[idx].content.substr(0,20) + (posts[idx].content.length > 20 ? ' ...' : '')
+            clone.childNodes[3].childNodes[3].innerHTML = posts[idx].content.substr(0,50) + (posts[idx].content.length > 50 ? ' ...' : '')
             cards.appendChild(clone)
         }
     }

@@ -1,6 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
+
 const db = require('./db');
+
+const blogRouter = require('./routes/blogRouter');
 
 ;(async () => {
     await db.connect()
@@ -25,6 +28,8 @@ const db = require('./db');
             date: new Date()
         })
     })
+
+    app.use('/blog', blogRouter)
 
     app.listen(3000, () => {
         console.log("Server is running on http://localhost:3000")
