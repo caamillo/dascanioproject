@@ -270,7 +270,7 @@ body .container section.blogdiv .cards .card .card-body a:hover {
   color: black;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1005px) {
   body .container section.blogdiv .cards .card {
     display: block;
     width: 250px;

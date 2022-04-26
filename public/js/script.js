@@ -13,6 +13,7 @@ function changeNavColor(){
     if (currentDiv == null) currentDiv = activediv
     else if (activediv == currentDiv) return
     if(activediv == 0){
+        console.log('main')
         changeActive(document.getElementById('home'))
         navbar.forEach(item => {
             if(!item.childNodes[1].classList.contains('active')){
@@ -23,6 +24,7 @@ function changeNavColor(){
         })
     }
     if(activediv == 1){
+        console.log('blog')
         changeActive(document.getElementById('blog'))
         navbar.forEach(item => {
             if(!item.childNodes[1].classList.contains('active')){
@@ -33,6 +35,7 @@ function changeNavColor(){
         })
     }
     if(activediv == 2){
+        console.log('about')
         changeActive(document.getElementById('about'))
         navbar.forEach(item => {
             if(!item.childNodes[1].classList.contains('active')){
@@ -54,6 +57,7 @@ function getActiveDiv () {
             rect[i][j] = els[i][j].getBoundingClientRect().top;
         }
     }
+    rect[1] = rect[1].splice(1)
     var min1 = 0
     var min2 = 0
     var min = Math.abs(rect[min1][min2])
@@ -88,7 +92,7 @@ navbar.forEach(item => {
                 document.getElementById("homediv").scrollIntoView()
                 break
             case 'blog':
-                document.getElementsByClassName("blogdiv")[0].scrollIntoView()
+                document.getElementsByClassName("blogdiv")[1].scrollIntoView()
                 break
             case 'about':
                 document.getElementById("aboutdiv").scrollIntoView()
@@ -104,13 +108,70 @@ function b64DecodeUnicode(str) {
     }).join(''));
 }
 
-const maxdesktop = 700
+Element.prototype.insertChildAtIndex = function(child, index) {
+    if (!index) index = 0
+    if (index >= this.children.length) {
+      this.appendChild(child)
+    } else {
+      this.insertBefore(child, this.children[index])
+    }
+}
+
+const maxdesktop = 1005
+var lastres = null
 
 function buildBlog(){
     const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
-    const posts = JSON.parse(b64DecodeUnicode(blog))
-    posts.push(JSON.parse(JSON.stringify({date:new Date()})))
+    if (lastres != null)
+        if (width >= maxdesktop && lastres) return
+            else if (width < maxdesktop && !lastres) return
+    const posts = []
+    // remove example
+    for (let i = 0; i < 10; i++) posts.push(
+        {
+            title: 'test title',
+            content: 'test content !!!! si và a lettòòò!! Poliziaaaa&%£',
+            author: 'Samuele Fornaro',
+            date: JSON.parse(JSON.stringify(new Date())),
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Red_Vespa_Scooter.jpg/1200px-Red_Vespa_Scooter.jpg'
+        }
+    )
     posts.filter(item => item.date != null).sort((a,b) => b.date - a.date)
+    const postperpage = width >= maxdesktop ? 3 : 2
+    const lastpage = (Math.ceil(posts.length/postperpage) * postperpage) / postperpage
+
+    // Delete posts
+
+    const postedcards = document.getElementsByClassName('card')
+    while (postedcards.length > 1) postedcards[0].parentNode.removeChild(postedcards[0])
+    postedcards[0].style.display = 'none'
+    const sections = document.getElementsByClassName('blogdiv')
+    while (sections.length > 1) sections[0].parentNode.removeChild(sections[0])
+    sections[0].style.display = 'none'
+
+    //Create posts
+
+    for(var i = 0; i < lastpage; i++){
+        const section = document.getElementsByClassName('blogdiv')[0]
+        const clonesection = section.cloneNode(true)
+        clonesection.style.display = 'flex';
+        const container = document.getElementsByClassName('container')[0]
+        container.insertChildAtIndex(clonesection,container.children.length - 1)
+        const cards = document.getElementsByClassName('cards')[i + 1]
+        for(var j = 0; j < postperpage; j++){
+            const idx = i * postperpage + j
+            if (idx >= posts.length) break
+            const template = document.getElementsByClassName('card')[0] // create post per section
+            const clone = template.cloneNode(true)
+
+            clone.style.display = width >= maxdesktop ? 'inline-block' : 'block'
+            clone.childNodes[1].src = posts[idx].img
+            clone.childNodes[3].childNodes[1].innerHTML = posts[idx].title
+            clone.childNodes[3].childNodes[3].innerHTML = posts[idx].content.substr(0,20) + (posts[idx].content.length > 20 ? ' ...' : '')
+            cards.appendChild(clone)
+        }
+    }
+    lastres = !lastres
 }
 
 $(window).resize(function(){
@@ -127,4 +188,5 @@ $(document).ready(function() {
         $('html').css('overflow-y', 'scroll')
     }, 1000)
     changeNavColor()
+    buildBlog()
 })
