@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap");
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+html ::-webkit-scrollbar {
+  width: 0px;
+}
+
+html ::-khtml-scrollbar {
+  width: 0px;
+}
+
+html ::-moz-scrollbar {
+  width: 0px;
+}
+
+html ::-ms-scrollbar {
+  width: 0px;
+}
+
+html ::scrollbar {
+  width: 0px;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #feffe3;
+}
+
+body ::-webkit-selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body ::-khtml-selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body ::-moz-selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body ::-ms-selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body ::selection {
+  color: #fafcc4;
+  background: #968E72;
+}
+
+body .container #card {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 3rem;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 35vw;
+  min-width: 600px;
+  margin: 0;
+  background-color: #fafcc4;
+  border: 1px solid #968E72;
+}
+
+body .container #card #header #titleblog h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #968E72;
+}
+
+body .container #card #header #imgblog {
+  background-color: #968E72;
+  padding: 2rem;
+}
+
+body .container #card #header #imgblog img {
+  width: 15vw;
+  min-width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .container #card #content #dateblog {
+  font-size: 1rem;
+  font-weight: 100;
+  margin-bottom: 10px;
+  color: #968E72;
+}
+
+body .container #card #content p {
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+body .container #card #content #author {
+  color: #968E72;
+  margin-bottom: 0.8rem;
+}
+
+@media screen and (max-width: 1000px) {
+  body .container #card {
+    position: relative;
+    top: 0;
+    width: 350px;
+    min-width: 200px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  body .container #card #header {
+    text-align: center;
+  }
+  body .container #card #header #titleblog h1 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #968E72;
+  }
+  body .container #card #header #imgblog {
+    background-color: #968E72;
+    padding: 1rem;
+  }
+  body .container #card #header #imgblog img {
+    width: 180px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body .container #card #content #dateblog {
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: #968E72;
+  }
+  body .container #card #content p {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  body .container #card #content #author {
+    color: #968E72;
+    margin-bottom: 0.8rem;
+  }
+}
+
+body img {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-select: none;
+  -khtml-user-drag: none;
+  -moz-user-select: none;
+  -moz-user-drag: none;
+  -ms-user-select: none;
+  -ms-user-drag: none;
+  user-select: none;
+  user-drag: none;
+}
+/*# sourceMappingURL=blog.css.map */

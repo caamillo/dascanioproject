@@ -89,13 +89,13 @@ navbar.forEach(item => {
         const id = item.childNodes[1].id
         switch(id){
             case 'home':
-                document.getElementById("homediv").scrollIntoView()
+                document.getElementById("homediv").scrollIntoView({behavior: "smooth"})
                 break
             case 'blog':
-                document.getElementsByClassName("blogdiv")[1].scrollIntoView()
+                document.getElementsByClassName("blogdiv")[1].scrollIntoView({behavior: "smooth"})
                 break
             case 'about':
-                document.getElementById("aboutdiv").scrollIntoView()
+                document.getElementById("aboutdiv").scrollIntoView({behavior: "smooth"})
                 break
         }
         changeActive(item.childNodes[1])

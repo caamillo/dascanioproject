@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+$color1: #968E72;
+$color2: #fafcc4;
+
+$bgcolor: #feffe3;
+
+$prefixes: ("-webkit-", "-khtml-", "-moz-", "-ms-",  "");
+
+@mixin selection($color, $background) {
+    @each $prefix in $prefixes {
+        ::#{$prefix}selection {
+            color: $color;
+            background: $background;
+        }
+    }
+}
+
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @each $prefix in $prefixes {
+        ::#{$prefix}scrollbar {
+            width: 0px;
+        }
+    }
+    scrollbar-width: none;
+}
+body{
+    font-family: 'Playfair Display', serif;
+    background-color: $bgcolor;
+    @include selection($color2, $color1);
+    .container{
+        #card{
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 3rem;
+            transform: translate(-50%, 0%);
+            width: 35vw;
+            min-width: 600px;
+            margin: 0;
+            background-color: $color2;
+            border: 1px solid $color1;
+            #header{
+                #titleblog{
+                    h1{
+                        font-size: 1.7rem;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                        color: $color1;
+                    }
+                }
+                #imgblog{
+                    background-color: $color1;
+                    padding: 2rem;
+                    img{
+                        width: 15vw;
+                        min-width: 250px;
+                        object-fit: cover;
+                    }
+                }
+            }
+            #content{
+                #dateblog{
+                    font-size: 1rem;
+                    font-weight: 100;
+                    margin-bottom: 10px;
+                    color: $color1;
+                }
+                p{
+                    font-size: 0.8rem;
+                    padding: 1rem;
+                }
+                #author{
+                    color: $color1;
+                    margin-bottom: 0.8rem;
+                }
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            #card{
+                position: relative;
+                top:0;
+                width: 350px;
+                min-width: 200px;
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+                #header{
+                    text-align: center;
+                    #titleblog{
+                        h1{
+                            font-size: 1.3rem;
+                            margin-bottom: 5px;
+                            color: $color1;
+                        }
+                    }
+                    #imgblog{
+                        background-color: $color1;
+                        padding: 1rem;
+                        img{
+                            width: 180px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                #content{
+                    #dateblog{
+                        font-size: 0.8rem;
+                        font-weight: 100;
+                        color: $color1;
+                    }
+                    p{
+                        font-size: 0.8rem;
+                        padding: 0.5rem;
+                    }
+                    #author{
+                        color: $color1;
+                        margin-bottom: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+    img{
+        @each $prefix in $prefixes {
+            #{$prefix}user-select: none;
+            #{$prefix}user-drag: none;
+        }
+    }
+}
