@@ -1,8 +1,13 @@
-Animation:
-    Animation Load Blog
-    Animation Blog cards (js check if is in vieport)
+Nav:
+    (Maybe) Black Gradient
 
 About:
+    FIX nome lungo
+    FIX telefono
+    FIX ultimo elemento che esce fuori
+    Border img
+    Aggiungere selezione colorata
     Cards
     Positioning Cards
     Responsive Design
+    Add link to IG and Github

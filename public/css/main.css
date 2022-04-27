@@ -357,6 +357,144 @@ body .container section.blogdiv .cards .card .card-body p {
   }
 }
 
+body .container section#aboutdiv #aboutteams #team {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 1rem;
+  position: relative;
+  top: 6rem;
+}
+
+body .container section#aboutdiv #aboutteams #team #membercard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid #8a805b;
+  background-color: #fafcc4;
+  min-width: 375px;
+  width: 25vw;
+  height: 100px;
+  margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 1rem;
+}
+
+body .container section#aboutdiv #aboutteams #team #membercard img {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100px;
+  width: 100px;
+}
+
+body .container section#aboutdiv #aboutteams #team #membercard .card-body {
+  color: #8a805b;
+  margin-left: 2rem;
+}
+
+body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-title {
+  font-size: 1.2rem;
+  color: #8a805b;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 1rem;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-text {
+  margin: 0;
+  margin-top: 0.3rem;
+  font-weight: 100;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1005px) {
+  body .container section#aboutdiv #aboutteams #team {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    position: relative;
+    top: 6rem;
+  }
+  body .container section#aboutdiv #aboutteams #team #membercard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #fafcc4;
+    min-width: 322px;
+    width: 25vw;
+    height: 100px;
+    margin: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 1rem;
+  }
+  body .container section#aboutdiv #aboutteams #team #membercard img {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 100px;
+    width: 100px;
+  }
+  body .container section#aboutdiv #aboutteams #team #membercard .card-body {
+    color: black;
+    margin-left: 2rem;
+  }
+  body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-title {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 1rem;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -khtml-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-text {
+    margin: 0;
+    margin-top: 0.3rem;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -khtml-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
 body img {
   -webkit-user-select: none;
   -webkit-user-drag: none;
