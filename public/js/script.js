@@ -176,5 +176,21 @@ $(document).ready(function() {
     }, 1000)
     changeNavColor()
     buildBlog()
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting && entry.target.classList.contains('fade')){
+                console.log('targetting')
+                entry.target.style.animation = 'fadecard 1s'
+                entry.target.classList.remove('fade')
+                entry.target.style.opacity = '1'
+            }
+        })
+    })
+    document.querySelectorAll('.card').forEach(item => {
+        if(item.style.display != 'none'){
+            item.classList.add('fade')
+            observer.observe(item)
+        }
+    })
     console.log('Ready!')
 })
