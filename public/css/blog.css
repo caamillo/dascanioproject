@@ -28,6 +28,7 @@ html ::scrollbar {
 body {
   font-family: 'Playfair Display', serif;
   background-color: #feffe3;
+  margin: 0;
 }
 
 body ::-webkit-selection {
@@ -59,9 +60,11 @@ body .container #indexes {
   position: fixed;
   left: 0;
   right: 0;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-left: auto;
   margin-right: auto;
+  z-index: 3;
+  background-color: #8a805b;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -70,13 +73,13 @@ body .container #indexes {
 
 body .container #indexes a {
   text-decoration: none;
-  color: #8a805b;
+  color: #E9EB9E;
   color: 1rem;
   cursor: default;
 }
 
 body .container #indexes a:hover {
-  color: #000;
+  color: #fff;
 }
 
 body .container #indexes ul {
@@ -132,7 +135,7 @@ body .container #card #content #dateblog {
 }
 
 body .container #card #content p {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   padding: 1rem;
 }
 
@@ -141,14 +144,38 @@ body .container #card #content #author {
   margin-bottom: 0.8rem;
 }
 
+@-webkit-keyframes test {
+  0% {
+    opacity: 0;
+    top: 0rem;
+  }
+  100% {
+    opacity: 1;
+    top: 3.3rem;
+  }
+}
+
+@keyframes test {
+  0% {
+    opacity: 0;
+    top: 0rem;
+  }
+  100% {
+    opacity: 1;
+    top: 3.3rem;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   body .container #indexes {
-    position: relative;
+    position: fixed;
     left: 0;
     right: 0;
-    padding: 0.5rem;
+    padding: 1rem;
     margin-left: auto;
     margin-right: auto;
+    z-index: 3;
+    background-color: #8a805b;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -156,12 +183,12 @@ body .container #card #content #author {
   }
   body .container #indexes a {
     text-decoration: none;
-    color: #8a805b;
+    color: #E9EB9E;
     color: 1rem;
     cursor: default;
   }
   body .container #indexes a:hover {
-    color: #000;
+    color: #fff;
   }
   body .container #indexes ul {
     margin: 0 auto;
@@ -210,6 +237,26 @@ body .container #card #content #author {
   body .container #card #content #author {
     color: #968E72;
     margin-bottom: 0.8rem;
+  }
+  @-webkit-keyframes test {
+    0% {
+      opacity: 0;
+      margin-top: 0rem;
+    }
+    100% {
+      opacity: 1;
+      margin-top: 0.5rem;
+    }
+  }
+  @keyframes test {
+    0% {
+      opacity: 0;
+      margin-top: 0rem;
+    }
+    100% {
+      opacity: 1;
+      margin-top: 0.5rem;
+    }
   }
 }
 

@@ -3,6 +3,9 @@
 $color1: #968E72;
 $color2: #fafcc4;
 
+$navcolor1: #E9EB9E;
+$navcolor2: #8a805b;
+
 $bgcolor: #feffe3;
 
 $prefixes: ("-webkit-", "-khtml-", "-moz-", "-ms-",  "");
@@ -29,26 +32,29 @@ html{
 body{
     font-family: 'Playfair Display', serif;
     background-color: $bgcolor;
+    margin: 0;
     @include selection($color2, $color1);
     .container{
         #indexes{
             position: fixed;
             left:0;
             right:0;
-            padding: 0.5rem;
+            padding: 1rem;
             margin-left: auto;
             margin-right: auto;
+            z-index: 3;
+            background-color: $navcolor2;
             @each $prefix in $prefixes {
                 #{$prefix}user-select: none;
             }
             a{
                 text-decoration: none;
-                color: #8a805b;
+                color: $navcolor1;
                 color: 1rem;
                 cursor: default;
             }
             a:hover{
-                color:#000;
+                color:#fff;
             }
             ul{
                 margin: 0 auto;
@@ -99,7 +105,7 @@ body{
                     color: $color1;
                 }
                 p{
-                    font-size: 0.8rem;
+                    font-size: 1.2rem;
                     padding: 1rem;
                 }
                 #author{
@@ -107,26 +113,38 @@ body{
                     margin-bottom: 0.8rem;
                 }
             }
+            @keyframes test {
+                0% {
+                    opacity: 0;
+                    top: 0rem;
+                }
+                100% {
+                    opacity: 1;
+                    top: 3.3rem;
+                }
+            }
         }
         @media screen and (max-width: 1000px) {
             #indexes{
-                position: relative;
+                position: fixed;
                 left:0;
                 right:0;
-                padding: 0.5rem;
+                padding: 1rem;
                 margin-left: auto;
                 margin-right: auto;
+                z-index: 3;
+                background-color: $navcolor2;
                 @each $prefix in $prefixes {
                     #{$prefix}user-select: none;
                 }
                 a{
                     text-decoration: none;
-                    color: #8a805b;
+                    color: $navcolor1;
                     color: 1rem;
                     cursor: default;
                 }
                 a:hover{
-                    color:#000;
+                    color:#fff;
                 }
                 ul{
                     margin: 0 auto;
@@ -178,6 +196,16 @@ body{
                         color: $color1;
                         margin-bottom: 0.8rem;
                     }
+                }
+            }
+            @keyframes test {
+                0% {
+                    opacity: 0;
+                    margin-top: 0rem;
+                }
+                100% {
+                    opacity: 1;
+                    margin-top: 0.5rem;
                 }
             }
         }
