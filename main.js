@@ -21,14 +21,6 @@ const blogRouter = require('./routes/blogRouter');
         res.render('index', { blog: Buffer.from(JSON.stringify(blog)).toString('base64') })
     })
 
-    app.get('/test', async (req, res) => {
-        await db.blogsModel.create({
-            title: 'Test Blog',
-            content: 'This is a test blog',
-            date: new Date()
-        })
-    })
-
     app.use('/blog', blogRouter)
 
     app.listen(3000, () => {
