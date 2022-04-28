@@ -194,9 +194,21 @@ $(document).ready(function() {
                 observer.observe(item)
             }
         })
+        document.querySelectorAll('#membercard').forEach(item => {
+            if(item.style.display != 'none'){
+                item.classList.add('fade')
+                observer.observe(item)
+            }
+        })
     }else{
         document.querySelectorAll('.card').forEach(item => {
             if(item.style.display != 'none'){
+                item.style.opacity = '1'
+            }
+        })
+        document.querySelectorAll('.membercard').forEach(item => {
+            if(item.style.display != 'none'){
+                item.classList.add('fade')
                 item.style.opacity = '1'
             }
         })

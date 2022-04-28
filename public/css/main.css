@@ -357,7 +357,17 @@ body .container section.blogdiv .cards .card .card-body p {
   }
 }
 
-body .container section#aboutdiv #aboutteams #team {
+body .container section#aboutdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container section#aboutdiv #team {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -369,7 +379,7 @@ body .container section#aboutdiv #aboutteams #team {
   top: 6rem;
 }
 
-body .container section#aboutdiv #aboutteams #team #membercard {
+body .container section#aboutdiv #team #membercard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,6 +388,7 @@ body .container section#aboutdiv #aboutteams #team #membercard {
   min-width: 375px;
   width: 25vw;
   height: 100px;
+  max-height: 74px;
   margin: auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -392,20 +403,20 @@ body .container section#aboutdiv #aboutteams #team #membercard {
   padding: 1rem;
 }
 
-body .container section#aboutdiv #aboutteams #team #membercard img {
+body .container section#aboutdiv #team #membercard img {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
-body .container section#aboutdiv #aboutteams #team #membercard .card-body {
-  color: #8a805b;
+body .container section#aboutdiv #team #membercard .card-body {
+  color: #968E72;
   margin-left: 2rem;
 }
 
-body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-title {
+body .container section#aboutdiv #team #membercard .card-body .card-title {
   font-size: 1.2rem;
   color: #8a805b;
   font-weight: 600;
@@ -418,7 +429,7 @@ body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-
   transform: translateY(-50%);
 }
 
-body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-text {
+body .container section#aboutdiv #team #membercard .card-body .card-text {
   margin: 0;
   margin-top: 0.3rem;
   font-weight: 100;
@@ -429,8 +440,20 @@ body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-
   transform: translateY(-50%);
 }
 
+body .container section#aboutdiv #social {
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+body .container section#aboutdiv #social a {
+  text-decoration: none;
+  color: #fafcc4;
+}
+
 @media screen and (max-width: 1005px) {
-  body .container section#aboutdiv #aboutteams #team {
+  body .container section#aboutdiv #team {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[1];
@@ -438,18 +461,19 @@ body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-row-gap: 1vw;
     position: relative;
-    top: 6rem;
+    top: 3rem;
   }
-  body .container section#aboutdiv #aboutteams #team #membercard {
+  body .container section#aboutdiv #team #membercard {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     background-color: #fafcc4;
     min-width: 322px;
     width: 25vw;
-    height: 100px;
+    height: 100vw;
+    max-height: 38px;
     margin: auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -463,19 +487,21 @@ body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-
             justify-content: start;
     padding: 1rem;
   }
-  body .container section#aboutdiv #aboutteams #team #membercard img {
+  body .container section#aboutdiv #team #membercard img {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    height: 100px;
-    width: 100px;
+    height: 5vw;
+    width: 5vw;
+    min-height: 50px;
+    min-width: 50px;
   }
-  body .container section#aboutdiv #aboutteams #team #membercard .card-body {
+  body .container section#aboutdiv #team #membercard .card-body {
     color: black;
     margin-left: 2rem;
   }
-  body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-title {
-    font-size: 1.2rem;
+  body .container section#aboutdiv #team #membercard .card-body .card-title {
+    font-size: 1rem;
     margin: 0;
     margin-top: 1rem;
     position: relative;
@@ -484,8 +510,9 @@ body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-
     -khtml-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  body .container section#aboutdiv #aboutteams #team #membercard .card-body .card-text {
+  body .container section#aboutdiv #team #membercard .card-body .card-text {
     margin: 0;
+    font-size: 0.8rem;
     margin-top: 0.3rem;
     position: relative;
     top: 50%;

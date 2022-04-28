@@ -231,21 +231,87 @@ body{
                 }
             }
             &#aboutdiv{
-                #aboutteams{
+                display: flex;
+                flex-direction: column;
+                #team{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-row-gap: 1rem;
+                    position: relative;
+                    top: $navmargin + 3rem;
+                    #membercard{
+                        display: flex;
+                        border: 2px solid $navcolor2;
+                        background-color: $color2;
+                        min-width: 375px;
+                        width: 25vw;
+                        height: 100px;
+                        max-height: 74px;
+                        margin: auto;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: start;
+                        padding: 1rem;
+                        img{
+                            width: fit-content;
+                            height: 80px;
+                            width: 80px;
+                        }
+                        .card-body{
+                            color: $color1;
+                            margin-left: 2rem;
+                            .card-title{
+                                font-size: 1.2rem;
+                                color: $navcolor2;
+                                font-weight: 600;
+                                margin: 0;
+                                margin-top: 1rem;
+                                position: relative;
+                                top: 50%;
+                                @each $prefix in $prefixes {
+                                    #{$prefix}transform: translateY(-50%);
+                                }
+                            }
+                            .card-text{
+                                margin: 0;
+                                margin-top: 0.3rem;
+                                font-weight: 100;
+                                position: relative;
+                                top: 50%;
+                                @each $prefix in $prefixes {
+                                    #{$prefix}transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+                #social{
+                    margin-top: auto;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                    font-size: 2.5rem;
+                    a{
+                        text-decoration: none;
+                        color: $color2;
+                    }
+                }
+                @media screen and (max-width: 1005px){
                     #team{
                         display: grid;
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: repeat(1, 1fr);
                         grid-template-rows: repeat(2, 1fr);
-                        grid-row-gap: 1rem;
+                        grid-column-gap: 10px;
+                        grid-row-gap: 1vw;
                         position: relative;
-                        top: $navmargin + 3rem;
+                        top: 3rem;
                         #membercard{
                             display: flex;
-                            border: 2px solid $navcolor2;
                             background-color: $color2;
-                            min-width: 375px;
+                            min-width: 322px;
                             width: 25vw;
-                            height: 100px;
+                            height: 100vw;
+                            max-height: 38px;
                             margin: auto;
                             flex-direction: row;
                             align-items: center;
@@ -253,16 +319,16 @@ body{
                             padding: 1rem;
                             img{
                                 width: fit-content;
-                                height: 100px;
-                                width: 100px;
+                                height: 5vw;
+                                width: 5vw;
+                                min-height: 50px;
+                                min-width: 50px;
                             }
                             .card-body{
-                                color: $colo1;
+                                color:black;
                                 margin-left: 2rem;
                                 .card-title{
-                                    font-size: 1.2rem;
-                                    color: $navcolor2;
-                                    font-weight: 600;
+                                    font-size: 1rem;
                                     margin: 0;
                                     margin-top: 1rem;
                                     position: relative;
@@ -273,65 +339,12 @@ body{
                                 }
                                 .card-text{
                                     margin: 0;
+                                    font-size: 0.8rem;
                                     margin-top: 0.3rem;
-                                    font-weight: 100;
                                     position: relative;
                                     top: 50%;
                                     @each $prefix in $prefixes {
                                         #{$prefix}transform: translateY(-50%);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                @media screen and (max-width: 1005px){
-                    #aboutteams{
-                        #team{
-                            display: grid;
-                            grid-template-columns: repeat(1, 1fr);
-                            grid-template-rows: repeat(2, 1fr);
-                            grid-column-gap: 10px;
-                            grid-row-gap: 10px;
-                            position: relative;
-                            top: $navmargin + 3rem;
-                            #membercard{
-                                display: flex;
-                                background-color: $color2;
-                                min-width: 322px;
-                                width: 25vw;
-                                height: 100px;
-                                margin: auto;
-                                flex-direction: row;
-                                align-items: center;
-                                justify-content: start;
-                                padding: 1rem;
-                                img{
-                                    width: fit-content;
-                                    height: 100px;
-                                    width: 100px;
-                                }
-                                .card-body{
-                                    color:black;
-                                    margin-left: 2rem;
-                                    .card-title{
-                                        font-size: 1.2rem;
-                                        margin: 0;
-                                        margin-top: 1rem;
-                                        position: relative;
-                                        top: 50%;
-                                        @each $prefix in $prefixes {
-                                            #{$prefix}transform: translateY(-50%);
-                                        }
-                                    }
-                                    .card-text{
-                                        margin: 0;
-                                        margin-top: 0.3rem;
-                                        position: relative;
-                                        top: 50%;
-                                        @each $prefix in $prefixes {
-                                            #{$prefix}transform: translateY(-50%);
-                                        }
                                     }
                                 }
                             }
