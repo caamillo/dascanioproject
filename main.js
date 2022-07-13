@@ -1,12 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
 
-const db = require('./db');
+// const db = require('./db');
 
 const blogRouter = require('./routes/blogRouter');
 
 ;(async () => {
-    await db.connect()
+    // await db.connect()
 
     const app = express()
     app.use(morgan('tiny'))
