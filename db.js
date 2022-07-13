@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 
+require('dotenv').config()
+
 const connect = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/dascanioproject',{autoIndex: true})
+        await mongoose.connect(`mongodb+srv://admin:${process.env.DB_PASS}@cluster0.gpwve.mongodb.net/dascanioproject`,{autoIndex: true})
         console.log('Connected to MongoDB')
     } catch (ex) {
         console.error(`MongoDB connection error:\n${ex}`)
