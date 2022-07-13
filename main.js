@@ -6,7 +6,7 @@ const db = require('./db');
 const blogRouter = require('./routes/blogRouter')
 
 ;(async () => {
-    await db.connect()
+    // await db.connect()
 
     const app = express()
     app.use(morgan('tiny'))
@@ -17,7 +17,7 @@ const blogRouter = require('./routes/blogRouter')
     app.set('view engine', 'ejs')
 
     app.get('/', async (req, res) => {
-        const blog = await db.blogsModel.find({})
+        const blog = await db.blogsModel
         res.render('index', { blog: Buffer.from(JSON.stringify(blog)).toString('base64') })
     })
 

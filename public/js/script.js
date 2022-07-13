@@ -155,7 +155,7 @@ function buildBlog(){
             clone.childNodes[1].src = posts[idx].img
             clone.childNodes[3].childNodes[1].innerHTML = posts[idx].title
             clone.childNodes[3].childNodes[3].innerHTML = posts[idx].content.substr(0,50) + (posts[idx].content.length > 50 ? ' ...' : '')
-            clone.childNodes[3].childNodes[5].href = 'blog?id=' + posts[idx]._id
+            clone.childNodes[3].childNodes[5].href = 'blog?id=' + posts[idx].id
             cards.appendChild(clone)
         }
     }
