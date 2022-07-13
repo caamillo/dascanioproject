@@ -23,7 +23,7 @@ const blogRouter = require('./routes/blogRouter');
 
     app.use('/blog', blogRouter)
 
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log("Server is running on http://localhost:3000")
     })
 })()
