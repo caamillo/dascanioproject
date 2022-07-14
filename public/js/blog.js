@@ -4,7 +4,7 @@ const getBlogById = (blogs, id) => {
 
 $(document).ready(async function(){
     const url = new URL(window.location.href)
-    const blogs = await (await fetch('./public/blogData.json')).json()
+    const blogs = await (await fetch('/dascanioproject/public/blogData.json')).json()
     const bufferedblog = getBlogById(blogs, url.searchParams.get('id'))
     if (bufferedblog == null) window.location = '/dascanioproject/views/index.html'
     const card = document.getElementById('card')
