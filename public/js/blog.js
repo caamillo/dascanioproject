@@ -4,9 +4,9 @@ const getBlogById = (blogs, id) => {
 
 $(document).ready(async function(){
     const url = new URL(window.location.href)
-    const blogs = await (await fetch('/public/blogData.json')).json()
+    const blogs = await (await fetch('public/blogData.json')).json()
     const bufferedblog = getBlogById(blogs, url.searchParams.get('id'))
-    if (bufferedblog == null) window.location = '/views/index.html'
+    if (bufferedblog == null) window.location = 'views/index.html'
     const card = document.getElementById('card')
     $('html').css('overflow-y', 'hidden')
     card.childNodes[1].childNodes[1].childNodes[1].src = bufferedblog.img
