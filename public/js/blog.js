@@ -1,6 +1,12 @@
-const bufferedblog = JSON.parse(b64DecodeUnicode(blog))
+const getBlogById = (blogs, id) => {
+    return blogs.find(blog => blog.id === id)
+}
 
-$(document).ready(function(){
+$(document).ready(async function(){
+    const url = new URL(window.location.href)
+    const blogs = await (await fetch('/dascanioproject/public/blogData.json')).json()
+    const bufferedblog = getBlogById(blogs, url.searchParams.get('id'))
+    if (bufferedblog == null) window.location = '/dascanioproject/views/index.html'
     const card = document.getElementById('card')
     $('html').css('overflow-y', 'hidden')
     card.childNodes[1].childNodes[1].childNodes[1].src = bufferedblog.img

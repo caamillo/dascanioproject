@@ -115,12 +115,15 @@ Element.prototype.insertChildAtIndex = function(child, index) {
 const maxdesktop = 1005
 var lastres = null
 
-function buildBlog(){
+async function buildBlog(){
     const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
     if (lastres != null)
         if (width >= maxdesktop && lastres) return
             else if (width < maxdesktop && !lastres) return
-    const blogs = JSON.parse(b64DecodeUnicode(blog))
+    const blogs = await (await fetch('/dascanioproject/public/blogData.json')).json()
+    console.log('ciaone')
+    console.log('ciao')
+    console.log(blogs)
     const posts = []
     for (let b of blogs) posts.push(b)
     posts.filter(item => item.date != null).sort((a,b) => b.date - a.date)
@@ -155,18 +158,18 @@ function buildBlog(){
             clone.childNodes[1].src = posts[idx].img
             clone.childNodes[3].childNodes[1].innerHTML = posts[idx].title
             clone.childNodes[3].childNodes[3].innerHTML = posts[idx].content.substr(0,50) + (posts[idx].content.length > 50 ? ' ...' : '')
-            clone.childNodes[3].childNodes[5].href = 'blog?id=' + posts[idx].id
+            clone.childNodes[3].childNodes[5].href = 'blog.html?id=' + posts[idx].id
             cards.appendChild(clone)
         }
     }
     lastres = !lastres
 }
 
-$(window).resize(function(){
-    buildBlog()
+$(window).resize(async function(){
+    await buildBlog()
 })
 
-$(document).ready(function() {
+$(document).ready(async function() {
     $('html').css('overflow-y', 'hidden')
     document.getElementById('loader').style.animation = 'test 1s'
     document.getElementById('loader').style.opacity = '0'
@@ -175,7 +178,7 @@ $(document).ready(function() {
         $('html').css('overflow-y', 'scroll')
     }, 1000)
     changeNavColor()
-    buildBlog()
+    await buildBlog()
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
     if(!isSafari){
         const observer = new IntersectionObserver(entries => {
