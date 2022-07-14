@@ -120,6 +120,10 @@ async function buildBlog(){
     if (lastres != null)
         if (width >= maxdesktop && lastres) return
             else if (width < maxdesktop && !lastres) return
+    const blogs = await (await fetch('https://caamillo.github.io/dascanioproject/public/blogData.json')).json()
+    console.log('ciaone')
+    console.log('ciao')
+    console.log(blogs)
     const posts = []
     for (let b of blogs) posts.push(b)
     posts.filter(item => item.date != null).sort((a,b) => b.date - a.date)
