@@ -120,7 +120,7 @@ async function buildBlog(){
     if (lastres != null)
         if (width >= maxdesktop && lastres) return
             else if (width < maxdesktop && !lastres) return
-    const blogs = await (await fetch('http://www.caamillo.github.io/dascanioproject/public/blogData.json')).json()
+    const blogs = await (await fetch('https://www.caamillo.github.io/dascanioproject/public/blogData.json')).json()
     console.log('ciaone')
     console.log('ciao')
     console.log(blogs)
