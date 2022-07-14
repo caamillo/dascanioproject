@@ -21,7 +21,6 @@
     opacity: 0;
   }
 }
-
 @-webkit-keyframes fadecard {
   from {
     opacity: 0;
@@ -30,7 +29,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadecard {
   from {
     opacity: 0;
@@ -39,7 +37,6 @@
     opacity: 1;
   }
 }
-
 html {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -48,61 +45,50 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
-
 html ::-webkit-scrollbar {
   width: 0px;
 }
-
 html ::-khtml-scrollbar {
   width: 0px;
 }
-
 html ::-moz-scrollbar {
   width: 0px;
 }
-
 html ::-ms-scrollbar {
   width: 0px;
 }
-
 html ::scrollbar {
   width: 0px;
 }
 
 body {
   background-color: #968E72;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: #fafcc4;
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
-
 body ::-webkit-selection {
   color: #968E72;
   background: #fafcc4;
 }
-
 body ::-khtml-selection {
   color: #968E72;
   background: #fafcc4;
 }
-
 body ::-moz-selection {
   color: #968E72;
   background: #fafcc4;
 }
-
 body ::-ms-selection {
   color: #968E72;
   background: #fafcc4;
 }
-
 body ::selection {
   color: #968E72;
   background: #fafcc4;
 }
-
 body #indexes {
   position: fixed;
   left: 0;
@@ -115,33 +101,27 @@ body #indexes {
   -ms-user-select: none;
   user-select: none;
 }
-
 body #indexes a {
   text-decoration: none;
   color: #E9EB9E;
   cursor: default;
 }
-
 body #indexes a:hover {
   color: white;
 }
-
 body #indexes a.active {
   color: white;
 }
-
 body #indexes ul {
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
   text-align: center;
 }
-
 body #indexes ul li {
   margin: 9vw;
   display: inline;
 }
-
 body #loader {
   position: fixed;
   z-index: 100;
@@ -155,75 +135,49 @@ body #loader {
   -ms-user-select: none;
   user-select: none;
 }
-
 body #loader #title {
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-
 body #loader #title h1 {
   color: #000000;
   font-size: 7vh;
   font-weight: 700;
   margin: 0;
 }
-
 body .container {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
-
 body .container section {
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
 }
-
 body .container section#homediv {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-
 body .container section#homediv h1 {
   font-size: 7vh;
   font-weight: 700;
   margin: 0;
 }
-
 body .container section.blogdiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: #fafcc4;
   color: #968E72;
 }
-
 body .container section.blogdiv .cards .card {
   display: inline-block;
   opacity: 0;
@@ -232,49 +186,40 @@ body .container section.blogdiv .cards .card {
   border: 1px solid #968E72;
   color: #968E72;
 }
-
 body .container section.blogdiv .cards .card ::-webkit-selection {
   color: #fafcc4;
   background: #968E72;
 }
-
 body .container section.blogdiv .cards .card ::-khtml-selection {
   color: #fafcc4;
   background: #968E72;
 }
-
 body .container section.blogdiv .cards .card ::-moz-selection {
   color: #fafcc4;
   background: #968E72;
 }
-
 body .container section.blogdiv .cards .card ::-ms-selection {
   color: #fafcc4;
   background: #968E72;
 }
-
 body .container section.blogdiv .cards .card ::selection {
   color: #fafcc4;
   background: #968E72;
 }
-
 body .container section.blogdiv .cards .card .card-img-top {
   width: 100%;
   height: 20vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 body .container section.blogdiv .cards .card .card-body {
   padding: 1rem;
 }
-
 body .container section.blogdiv .cards .card .card-body .card-title {
   font-size: 3vh;
   font-weight: 600;
   margin: 0;
 }
-
 body .container section.blogdiv .cards .card .card-body a {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -284,15 +229,12 @@ body .container section.blogdiv .cards .card .card-body a {
   color: #8a805b;
   text-decoration: none;
 }
-
 body .container section.blogdiv .cards .card .card-body a:hover {
   color: black;
 }
-
 body .container section.blogdiv .cards .card .card-body p {
   height: 5vh;
 }
-
 @media screen and (max-width: 1005px) {
   body .container section.blogdiv .cards .card {
     display: block;
@@ -356,32 +298,19 @@ body .container section.blogdiv .cards .card .card-body p {
     height: 3vh;
   }
 }
-
 body .container section#aboutdiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 body .container section#aboutdiv #team {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-row-gap: 1rem;
   position: relative;
   top: 6rem;
 }
-
 body .container section#aboutdiv #team #membercard {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border: 2px solid #8a805b;
   background-color: #fafcc4;
@@ -390,19 +319,11 @@ body .container section#aboutdiv #team #membercard {
   height: 100px;
   max-height: 74px;
   margin: auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
   padding: 1rem;
 }
-
 body .container section#aboutdiv #team #membercard img {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -410,12 +331,10 @@ body .container section#aboutdiv #team #membercard img {
   height: 80px;
   width: 80px;
 }
-
 body .container section#aboutdiv #team #membercard .card-body {
   color: #968E72;
   margin-left: 2rem;
 }
-
 body .container section#aboutdiv #team #membercard .card-body .card-title {
   font-size: 1.2rem;
   color: #8a805b;
@@ -424,50 +343,39 @@ body .container section#aboutdiv #team #membercard .card-body .card-title {
   margin-top: 1rem;
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   -khtml-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
 body .container section#aboutdiv #team #membercard .card-body .card-text {
   margin: 0;
   margin-top: 0.3rem;
   font-weight: 100;
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   -khtml-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
 body .container section#aboutdiv #social {
   margin-top: auto;
   text-align: center;
   margin-bottom: 1rem;
   font-size: 2.5rem;
 }
-
 body .container section#aboutdiv #social a {
   text-decoration: none;
   color: #fafcc4;
 }
-
 @media screen and (max-width: 1005px) {
   body .container section#aboutdiv #team {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    -ms-grid-rows: (1fr)[2];
-        grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 1vw;
     position: relative;
     top: 3rem;
   }
   body .container section#aboutdiv #team #membercard {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     background-color: #fafcc4;
     min-width: 322px;
@@ -475,16 +383,9 @@ body .container section#aboutdiv #social a {
     height: 100vw;
     max-height: 38px;
     margin: auto;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
     padding: 1rem;
   }
   body .container section#aboutdiv #team #membercard img {
@@ -506,7 +407,6 @@ body .container section#aboutdiv #social a {
     margin-top: 1rem;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
     -khtml-transform: translateY(-50%);
     transform: translateY(-50%);
   }
@@ -516,12 +416,10 @@ body .container section#aboutdiv #social a {
     margin-top: 0.3rem;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
     -khtml-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 }
-
 body img {
   -webkit-user-select: none;
   -webkit-user-drag: none;
@@ -533,5 +431,4 @@ body img {
   -ms-user-drag: none;
   user-select: none;
   user-drag: none;
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
